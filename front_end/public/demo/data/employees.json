@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+        "id": 1000,
+        "employees_name": "Janine Tulid",
+        "type": "Regular",
+        "position": "Engineering",
+        "status": "active",
+        "action": "button"
+        },
+        {
+        "id": 1001,
+        "employees_name": "Jay Michael Dusaban",
+        "type": "Regular",
+        "position": "Welder",
+        "status": "active",
+        "action": "button"
+        },
+        {
+        "id": 1002,
+        "employees_name": "Jude Michael Andales",
+        "type": "Regular",
+        "position": "Welder",
+        "status": "active",
+        "action": "button"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+        "leave_type": "Holiday",
+        "leave_entitlement": "Payable"
+        },
+        {
+        "leave_type": "Leave",
+        "leave_entitlement": "Payable"
+        }
+    ]
+}

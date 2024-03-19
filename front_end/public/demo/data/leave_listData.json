@@ -1,0 +1,24 @@
+{
+    "data": [ 
+        {
+            "id": "1000",
+            "employees_name": "Janine Tulid",
+            "employee_type": "Regular",
+            "position": "Welder",
+            "leave_types": "Holiday",
+            "leave_entitlements": "Paid",
+            "number_of_days": "7",
+            "number_of_credits": "30"
+        },
+        {
+            "id": "1001",
+            "employees_name": "Jay Michael Dusaban",
+            "employee_type": "Regular",
+            "position": "Welder",
+            "leave_types": "Holiday",
+            "leave_entitlements": "Paid",
+            "number_of_days": "7",
+            "number_of_credits": "30"
+        }
+    ]
+}

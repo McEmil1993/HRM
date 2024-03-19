@@ -1,0 +1,29 @@
+{
+    "data":
+    [
+        {
+            "id":1000,
+            "employees_name": "Janine Tulid",
+            "type": "Regular",
+            "position": "Engineering",
+            "count_of_violation": "3",
+            "status": "active"
+        },
+        {
+            "id":1001,
+            "employees_name": "Jay Michael Dusaban",
+            "type": "Regular",
+            "position": "Welder",
+            "count_of_violation": "0",
+            "status": "active"
+        },
+        {
+            "id":1002,
+            "employees_name": "Jude Michael Andales",
+            "type": "Regular",
+            "position": "Welder",
+            "count_of_violation": "1",
+            "status": "active"
+        }
+    ]
+}

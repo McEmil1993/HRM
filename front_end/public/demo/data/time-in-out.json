@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+        "date":"01/01/2024",
+        "day":"Monday",
+        "id": 1000,
+        "employees_name": "Janine Tulid",
+        "position": "Engineering",
+        "shift":"Regular Shift",
+        "timeshift": "8:00 AM - 5:00 PM",
+        "time_in": "8:00 AM",
+        "time_out": "5:00 PM",
+        "approvedOT": "No"
+        },
+        {
+        "date":"01/01/2024",
+        "day":"Monday",
+        "id": 1001,
+        "employees_name": "Jay Michael Dusaban",
+        "position": "Welder",
+        "shift":"Regular Shift",
+        "timeshift": "8:00 AM - 5:00 PM",
+        "time_in": "8:00 AM",
+        "time_out": "5:00 PM",
+        "approvedOT": "No"
+        },
+        {
+        "date":"01/01/2024",
+        "day":"Monday",
+        "id": 1002,
+        "employees_name": "Jude Michael Andales",
+        "position": "Welder",
+        "shift":"Regular Shift",
+        "timeshift": "8:00 AM - 5:00 PM",
+        "time_in": "8:00 AM",
+        "time_out": "5:00 PM",
+        "approvedOT": "No"
+        }
+    ]
+}

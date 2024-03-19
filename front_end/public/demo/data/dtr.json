@@ -1,0 +1,11 @@
+{
+    "data": [
+        {
+        "days": 1,
+        "time_in_out": "8:00am - 5:00pm",
+        "undertime": "None",
+        "hours_of_late":"None",
+        "total_of_hours": "8 hours"
+        }
+    ]
+}

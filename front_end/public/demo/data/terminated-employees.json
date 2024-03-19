@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+        "id": 1000,
+        "employees_name": "Janine Tulid",
+        "position": "Engineering",
+        "status": "terminated",
+        "reason": "Stealing Item from warehouse",
+        "date_terminated": "January 8, 2024"
+        },
+        {
+        "id": 1001,
+        "employees_name": "Jay Michael Dusaban",
+        "position": "Welder",
+        "status": "terminated",
+        "reason": "Stealing Item from warehouse",
+        "date_terminated": "January 8, 2024"
+        },
+        {
+        "id": 1002,
+        "employees_name": "Jude Michael Andales",
+        "position": "Welder",
+        "status": "terminated",
+        "reason": "Stealing Item from warehouse",
+        "date_terminated": "January 8, 2024"
+        }
+    ]
+}

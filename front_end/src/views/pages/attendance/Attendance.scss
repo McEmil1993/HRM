@@ -1,0 +1,55 @@
+.grid1 {
+    display: flex;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.dtr{
+    display: flex;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    text-align: center;
+    flex-direction: column;
+}
+
+.result{
+    display:flex;
+    flex-direction: column;
+    margin: 0 0;
+    
+}  .text-danger{
+    color: red;
+    font-weight: bold;
+}
+
+
+.text-success{
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+}
+.e_name_month{
+    display: flex;
+}
+
+.cep{
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.dailytimerecord{
+    font-size: 30px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #000;
+    border-top: 2px solid #8a8a8a;
+    border-bottom: 2px solid #8a8a8a;
+}
+
+.ename_month{
+    margin: 10px;
+}

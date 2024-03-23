@@ -1,17 +1,14 @@
+import UserStorage from './UserStorage'; // replace '../path/to/UserStorage' with the actual path to the UserStorage.ts file
 import { userAuth } from '../boot/auth-store';
 import { inject } from 'vue'
 
 export default (to: any, from: any, next: any) => {
-  const token = localStorage.getItem('token');
+  const userStorage = new UserStorage();
+  const token = userStorage.getToken();
 
-  if (to.name === 'login') {
-
-    next();
-  } else if (!token) {
-
+  if (!token) {
     next({ name: 'login' });
   } else {
-
     next();
   }
 }

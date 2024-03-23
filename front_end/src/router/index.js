@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import AppLayout from '@/layout/AppLayout.vue';
 import UserOnly from '../middleware/user_auth'; 
+import UserStorage from '../middleware/UserStorage';
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
@@ -74,7 +75,16 @@ const router = createRouter({
             path: '/login',
             name: 'login',
             component: () => import('@/views/pages/auth/Login.vue'),
-            beforeEnter: [UserOnly]
+            beforeEnter: (to, from, next) => {
+                let userStorage = new UserStorage();
+                if (userStorage.getToken()) {
+                    // If the user is already logged in (i.e., they have a token),
+                    // redirect them to the dashboard instead of going to the login page.
+                    next({ name: 'dashboard' });
+                } else {
+                    next();
+                }
+            }
         },
         {
             path: '/access',

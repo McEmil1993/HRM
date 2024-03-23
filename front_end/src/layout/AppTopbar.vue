@@ -46,6 +46,7 @@
 </style>
 
 <script>
+import UserStorage from '@/middleware/UserStorage';
 export default {
     filters: {},
     data() {
@@ -90,9 +91,9 @@ export default {
             return !(sidebarEl.isSameNode(event.target) || sidebarEl.contains(event.target) || topbarEl.isSameNode(event.target) || topbarEl.contains(event.target));
         },
         logout() {
-            // Clear token from local storage
-            localStorage.removeItem('token');
-            // Redirect to login page
+
+            let userStorage = new UserStorage();
+            userStorage.removeUserDetails();
             this.$router.push({ name: 'login' });
         },
     },

@@ -50,7 +50,7 @@ import { ref, computed } from 'vue';
 import AppConfig from '@/layout/AppConfig.vue';
 import { api } from '@/boot/axios';
 import globalMixins from '@/mixins/global_mixins';
-
+import UserStorage from '@/middleware/UserStorage';
 
 
 export default {
@@ -82,14 +82,14 @@ export default {
         // You can add mounted hook logic here if needed
         this.fetchData();
         // console.log(this.auth);
-        
+
     },
     methods: {
         fetchData() {
             // const op = api.post('/api/logout');
 
             // console.log("TOKENS-->", op);
-            this.globalFunction.logout();
+            // this.globalFunction.logout();
             // api.get('/api/auth')
             //     .then(response => {
             //         console.log("response-->", response.data);
@@ -100,15 +100,28 @@ export default {
         },
 
         async signIn() {
+
             try {
+
                 const response = await api.post('/api/login_v1', {
                     email: this.form_data.username,
                     password: this.form_data.password
                 });
+                let userStorage = new UserStorage();
+                userStorage.setUserDetails({
+                    token: response.data.token,
+                    id: response.data.user.id,
+                    username: response.data.user.email,
+                    name: response.data.user.name,
+                    otherDetails: response.data.user
+                });
+                // console.log('response.data', response.data.token); // Handle success response
 
-                console.log('response.data', response.data.token); // Handle success response
-                
-                localStorage.setItem('token', response.data.token);
+                // localStorage.setItem('token', response.data.token);
+                // localStorage.setItem('id', response.data.token);
+                // localStorage.setItem('username', response.data.token);
+                // localStorage.setItem('name', response.data.token);
+                // localStorage.setItem('other_details', response.data.token);
                 // Redirect to Home page
                 this.$router.push({ name: 'dashboard' });
             } catch (error) {

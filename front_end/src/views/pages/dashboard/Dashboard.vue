@@ -5,6 +5,9 @@ import { useLayout } from '@/layout/composables/layout';
 
 const { isDarkTheme } = useLayout();
 
+const smsDialog = ref(false);
+const product = ref({});
+const submitted = ref(false);
 const products = ref(null);
 const lineData = reactive({
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -112,10 +115,49 @@ watch(
     },
     { immediate: true }
 );
+
+const openSMSDialog = () => {
+    product.value = {};
+    submitted.value = false;
+    smsDialog.value = true;
+};
+
+const hideSMSDialog = () => {
+    smsDialog.value = false;
+    submitted.value = false;
+};
+
+const sendSMS = () => {
+    submitted.value = true;
+    if (product.value.name && product.value.name.trim() && product.value.price) {
+        if (product.value.id) {
+            product.value.inventoryStatus = product.value.inventoryStatus.value ? product.value.inventoryStatus.value : product.value.inventoryStatus;
+            product.value[findIndexById(product.value.id)] = product.value;
+            toast.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
+        } else {
+            product.value.id = createId();
+            product.value.code = createId();
+            product.value.image = 'product-placeholder.svg';
+            product.value.inventoryStatus = product.value.inventoryStatus ? product.value.inventoryStatus.value : 'INSTOCK';
+            product.value.push(product.value);
+            toast.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
+        }
+        productAddDialog.value = false;
+        product.value = {};
+    }
+};
+
 </script>
 
 <template>
     <div class="grid">
+        <div class="col-12">
+            <span style="margin-left: 0.5em; vertical-align: middle" class="image-text">
+                <Button type="button"  icon="pi pi-fw pi-comment layout-menuitem-icon" label="Send SMS"
+                    class="p-button p-component p-button-success mr-2 mb-2" @click="openSMSDialog"/>
+            </span>
+        </div>
+        
         <div class="col-12 lg:col-6 xl:col-4">
             <div class="card mb-0">
                 <div class="flex justify-content-between mb-3">
@@ -182,4 +224,22 @@ watch(
             </div>
         </div>
     </div>
+
+    <!-- Add Dialog -->
+    <Dialog v-model:visible="smsDialog" :style="{ width: '500px' }" header="SMS" :modal="true" class="p-fluid">
+        <div class="grid p-fluid">
+            <div class="col-12">
+                <label for="sms">Create a Message</label>
+                <Textarea id="sms" rows="2" cols="10"></Textarea>
+            </div>
+        </div>
+        <template #footer>
+            <Button label="Cancel" icon="pi pi-times" class="p-button-text" @click="hideSMSDialog" />
+            <Button label="Send Message" icon="pi pi-check" class="p-button-text" autofocus @click="sendSMS"/>
+        </template>
+    </Dialog>
+    <!-- End of Add Dialog -->
+
 </template>
+
+

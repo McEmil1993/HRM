@@ -14,7 +14,7 @@ export default defineConfig(() => {
         },
         define: {
             'process.env': {
-                BACKEND_URL: "http://192.168.68.186:235"
+                BACKEND_URL: "http://127.0.0.1:91"
             }
         },
         boot: [
